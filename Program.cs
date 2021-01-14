@@ -14,7 +14,7 @@ namespace Odev
             Products products2 = new Products();
             products2.ProductName = "Mouse";
             products2.productPrice = 120;
-            products2.ProductStockAmount = 90;
+            products2.ProductStockAmount = 80;
 
             Products products3 = new Products();
             products3.ProductName = "Monitor";
