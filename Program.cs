@@ -2,9 +2,9 @@
 
 namespace Odev
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Products products1 = new Products();
             products1.ProductName = "Keyboard";
@@ -20,40 +20,42 @@ namespace Odev
             products3.ProductName = "Monitor";
             products3.productPrice = 1500;
             products3.ProductStockAmount = 50;
-               
 
             Products[] urunler = new Products[]
             {
-                products1, products2, products3
+                    products1, products2, products3
             };
 
             Console.WriteLine("foreach ile");
+            Console.WriteLine("- - - - - - - - - - - -");
             foreach (var urun in urunler)
             {
-                Console.WriteLine(urun.ProductName + " : " + urun.productPrice);
+                Console.WriteLine($"Ürün Adı : {urun.ProductName} \nÜrün Fiyatı : {urun.productPrice} TL \nÜrün Adedi : {urun.ProductStockAmount}");
             }
             Console.WriteLine("for ile");
+            Console.WriteLine("- - - - - - - - - - - -");
 
             for (int i = 0; i < urunler.Length; i++)
             {
-                Console.WriteLine(urunler[i].ProductName + " : " + urunler[i].productPrice);
+                Console.WriteLine($"Ürün Adı : {urunler[i].ProductName} \nÜrün Fiyatı : {urunler[i].productPrice} TL \nÜrün Adedi : {urunler[i].ProductStockAmount}");
             }
 
             Console.WriteLine("while ile");
-            
+            Console.WriteLine("- - - - - - - - - - - -");
+
             int j = 0;
-            while (j<urunler.Length)
+            while (j < urunler.Length)
             {
-                Console.WriteLine(urunler[j].ProductName + " : " + urunler[j].productPrice);
+                Console.WriteLine($"Ürün Adı : {urunler[j].ProductName} \nÜrün Fiyatı : {urunler[j].productPrice} TL \nÜrün Adedi : {urunler[j].ProductStockAmount}");
                 j++;
             }
         }
     }
 
-    class Products
+    internal class Products
     {
         public string ProductName { get; set; }
-        public int  productPrice { get; set; }
+        public int productPrice { get; set; }
         public int ProductStockAmount { get; set; }
     }
 }
